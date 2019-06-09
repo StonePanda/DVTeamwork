@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>datavis</title>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	<script src="{% static 'js/echarts.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.raty.min.js' %}"></script>
+    <script src="{% static 'js/echarts-wordcloud.js' %}"></script>
+    <style type="text/css">
+		body {
+			background-color: rgb(230,230,230);
+		
+		}
+		.container{
+			border-style: none;
+		}
+		.loudou{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 40%;
+			height: 55%;
+		}
+		.sunburst{
+			position: absolute;
+			top: 0;
+			left: 40%;
+			width: 33%;
+			height: 55%;
+		}
+
+		.commentinfo_bottom{
+			position: absolute;
+			top: 0;
+			left: 73%;
+			width: 25%;
+			height: 55%;
+			overflow-y: scroll;
+			
+		}
+		.commentinfo{
+			border-top-style: none;
+            border-right-style: none;
+            border-bottom-style:solid;
+            border-bottom-width:2px;
+            border-bottom-color: rgb(247,247,247);
+            padding:10px;
+            color: grey;
+		}
+		.punch_card{
+			position: absolute;
+			top: 55%;
+			left: 0;
+			width: 70%;
+			height: 43%;
+
+		}
+		.cloud_world{
+			position: absolute;
+			top: 55%;
+			left: 73%;
+			width: 27%;
+			height: 43%;
+
+		}
+
+    </style>
+
+</head>
+<body>
+	<div class="container">
+		<div id="main1" class="loudou"></div>
+			<div id="main2" class="sunburst"></div>
+            	<!--<div class="commentinfo_top">
+					<p style="color: grey">精选短评</p>
+            	</div>-->
+            	<div class="commentinfo_bottom">
+					<div class="commentinfo">
+                          <span id="name0"></span>
+                          <span id="raty0"></span>
+                          <p id="comment0"></p>  
+                    </div>
+                    <div class="commentinfo">
+                          <span id="name1"></span>
+                          <span id="raty1"></span>
+                          <p id="comment1"></p>  
+                    </div>
+                   <div class="commentinfo">
+                          <span id="name2"></span>
+                          <span id="raty2"></span>
+                          <p id="comment2"></p>  
+                    </div>
+                   <div class="commentinfo">
+                          <span id="name3"></span>
+                          <span id="raty3"></span>
+                          <p id="comment3"></p>  
+                    </div>
+                   <div class="commentinfo">
+                          <span id="name4"></span>
+                          <span id="raty4"></span>
+                          <p id="comment4"></p>  
+                    </div>
+                   <div class="commentinfo">
+                          <span id="name5"></span>
+                          <span id="raty5"></span>
+                          <p id="comment5"></p>  
+                    </div> 
+                   <div class="commentinfo">
+                          <span id="name6"></span>
+                          <span id="raty6"></span>
+                          <p id="comment6"></p>  
+                    </div> 
+            	</div>
+           
+            
+		
+		<div id="main3" class="cloud_world"></div>
+		<div id="main4" class="punch_card"></div>
+	</div>
+	<script type="text/javascript" src="{% static 'js/punch-card.js' %}" charset="UTF-8"></script>
+	<script type="text/javascript" src="{% static 'js/bar.js' %}" charset="UTF-8"></script>
+	<script type="text/javascript" src="{% static 'js/sunburst.js' %}" charset="UTF-8"></script>
+</body>
+</html>

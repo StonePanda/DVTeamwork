@@ -1,0 +1,56 @@
+{% load static %}<!--表示我们需要加载静态文件!-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>315-data visulization teamwork</title>
+    <meta name="description" content="315-data visulization teamwork">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    <script language="JavaScript" type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+
+</head>
+
+<body data-type="index">
+    
+        <div class="main">
+        
+        <!-- Home Page -->
+
+        <div class="home">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        <h1 class="headline">315-Data Visulization Teamwork</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        <form action="" class="search-form">
+                            <input type="search" placeholder="Search..." class="search-input" id="search-input">
+                            <button type="button" class="button btn btn-search" onclick="gosearch()">Search</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="eight columns offset-by-two">
+                        <footer class="attribution">
+                            <p>Designed and coded by Team 315</p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
