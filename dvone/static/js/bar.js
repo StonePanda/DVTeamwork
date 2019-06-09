@@ -20,15 +20,21 @@ var option={
        	    inverse:true,
         	splitLine:{
             	show:false
-        	}
+        	},
+	    axisLabel:{
+                show: false
+            }
         },
         {
         	gridIndex: 1,
         	type:"category",
         	data:[],
         	splitLine:{
-            show:false
-        }
+            	     show:false
+        	},
+		axisLabel:{
+               	     show: false
+            }
     }
     ],
     yAxis: [{
