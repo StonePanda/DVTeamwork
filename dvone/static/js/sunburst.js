@@ -1,7 +1,7 @@
 //% load static %}
 var mychart2=echarts.init(document.getElementById("main2"));
 var mychart3=echarts.init(document.getElementById("main3"));
-//var colorlist=["#da0d68","#e0719c","#f99e1c","#ef5a78","#f99e1c"]
+colorlist=['#e65832','#d45a59','#f89a80','#f37674','#e75b68','#d0545f','#a87b64','#c78869','#d4ad12','#9d5433','#c89f83','#bb764c','#ad213e','#794752','#cc3d41','#b14d57','#c78936','#8c292c','#c94930','#caa465','#dfbd7e','#be8663','#b9a449','#b9a449','#dd4c51','#f2684b','#e73451','#e65656','#f89a1c','#f68a5c'];
 var option2 = {
     /*title: {
         text: 'SUNBURST',
@@ -111,11 +111,7 @@ mychart2.showLoading();
                     textStyle: {
                         normal: {
                             color: function () {
-                                return 'rgb(' + [
-                                    Math.round(Math.random() * 160),
-                                    Math.round(Math.random() * 160),
-                                    Math.round(Math.random() * 160)
-                                ].join(',') + ')';
+                                return colorlist[Math.round(Math.random() * 30)];
                             }
                         },
                         emphasis: {
