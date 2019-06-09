@@ -160,24 +160,24 @@ def view2(request):
 	dictjson=[{'name':score,'value':1,'children':[]}]
 
 	wuxingjson={'name':'五星','value':round(int(xingji.number_5num)/totalxing,2),'children':[],'itemStyle':{'color': '#e65832'}}
-	sixingjson={'name':'四星','value':round(int(xingji.number_4num)/totalxing,2),'children':[],'itemStyle':{'color': '#e65832'}}
-	saxingjson={'name':'三星','value':round(int(xingji.number_3num)/totalxing,2),'children':[],'itemStyle':{'color': '#e65832'}}
+	sixingjson={'name':'四星','value':round(int(xingji.number_4num)/totalxing,2),'children':[],'itemStyle':{'color': '#a87b64'}}
+	saxingjson={'name':'三星','value':round(int(xingji.number_3num)/totalxing,2),'children':[],'itemStyle':{'color': '#ad213e'}}
 	erxingjson={'name':'二星','value':round(int(xingji.number_2num)/totalxing,2),'children':[],'itemStyle':{'color': '#e65832'}}
-	yixingjson={'name':'一星','value':round(1-round(int(xingji.number_5num)/totalxing,2)-round(int(xingji.number_4num)/totalxing,2)-round(int(xingji.number_3num)/totalxing,2)-round(int(xingji.number_2num)/totalxing,2),2),'children':[],'itemStyle':{'color': '#e65832'}}
+	yixingjson={'name':'一星','value':round(1-round(int(xingji.number_5num)/totalxing,2)-round(int(xingji.number_4num)/totalxing,2)-round(int(xingji.number_3num)/totalxing,2)-round(int(xingji.number_2num)/totalxing,2),2),'children':[],'itemStyle':{'color': '#dd4c51'}}
 	kw=models.Keywords5.objects.get(mvid=request.session['geiid'])
 	#五星关键词
 	wuxingkw=int(kw.star_5_1)+int(kw.star_5_2)+int(kw.star_5_3)+int(kw.star_5_4)+int(kw.star_5_5)
 	if(wuxingkw==0):
 		wuxingjsonkw1={'name':kw.star_5_1_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw2={'name':kw.star_5_2_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw3={'name':kw.star_5_3_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw4={'name':kw.star_5_4_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw5={'name':kw.star_5_5_name,'value':0,'itemStyle':{'color': '#d45a59'}}
+		wuxingjsonkw2={'name':kw.star_5_2_name,'value':0,'itemStyle':{'color': '#f89a80'}}
+		wuxingjsonkw3={'name':kw.star_5_3_name,'value':0,'itemStyle':{'color': '#f37674'}}
+		wuxingjsonkw4={'name':kw.star_5_4_name,'value':0,'itemStyle':{'color': '#e75b68'}}
+		wuxingjsonkw5={'name':kw.star_5_5_name,'value':0,'itemStyle':{'color': '#d0545f'}}
 	else:
 		wuxingjsonkw1={'name':kw.star_5_1_name,'value':round(int(kw.star_5_1)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw2={'name':kw.star_5_2_name,'value':round(int(kw.star_5_2)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw3={'name':kw.star_5_3_name,'value':round(int(kw.star_5_3)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		wuxingjsonkw4={'name':kw.star_5_4_name,'value':round(int(kw.star_5_4)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
+		wuxingjsonkw2={'name':kw.star_5_2_name,'value':round(int(kw.star_5_2)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#f89a80'}}
+		wuxingjsonkw3={'name':kw.star_5_3_name,'value':round(int(kw.star_5_3)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#f37674'}}
+		wuxingjsonkw4={'name':kw.star_5_4_name,'value':round(int(kw.star_5_4)*int(xingji.number_5num)/wuxingkw/totalxing,2),'itemStyle':{'color': '#e75b68'}}
 		wuxingjsonkw5={'name':kw.star_5_5_name,'value':round(round(int(xingji.number_5num)/totalxing,2)-round(int(kw.star_5_1)*int(xingji.number_5num)/wuxingkw/totalxing,2)-round(int(kw.star_5_2)*int(xingji.number_5num)/wuxingkw/totalxing,2)-round(int(kw.star_5_3)*int(xingji.number_5num)/wuxingkw/totalxing,2)-round(int(kw.star_5_4)*int(xingji.number_5num)/wuxingkw/totalxing,2),2),'itemStyle':{'color': '#d45a59'}}
 	wuxingjson['children'].append(wuxingjsonkw1)
 	wuxingjson['children'].append(wuxingjsonkw2)
@@ -187,17 +187,17 @@ def view2(request):
 	#四星关键词
 	sixingkw=int(kw.star_4_1)+int(kw.star_4_2)+int(kw.star_4_3)+int(kw.star_4_4)+int(kw.star_4_5)
 	if(sixingkw==0):
-		sixingjsonkw1={'name':kw.star_4_1_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw2={'name':kw.star_4_2_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw3={'name':kw.star_4_3_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw4={'name':kw.star_4_4_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw5={'name':kw.star_4_5_name,'value':0,'itemStyle':{'color': '#d45a59'}}
+		sixingjsonkw1={'name':kw.star_4_1_name,'value':0,'itemStyle':{'color': '#c78869'}}
+		sixingjsonkw2={'name':kw.star_4_2_name,'value':0,'itemStyle':{'color': '#d4ad12'}}
+		sixingjsonkw3={'name':kw.star_4_3_name,'value':0,'itemStyle':{'color': '#9d5433'}}
+		sixingjsonkw4={'name':kw.star_4_4_name,'value':0,'itemStyle':{'color': '#c94930'}}
+		sixingjsonkw5={'name':kw.star_4_5_name,'value':0,'itemStyle':{'color': '#bb764c'}}
 	else:
-		sixingjsonkw1={'name':kw.star_4_1_name,'value':round(int(kw.star_4_1)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw2={'name':kw.star_4_2_name,'value':round(int(kw.star_4_2)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw3={'name':kw.star_4_3_name,'value':round(int(kw.star_4_3)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw4={'name':kw.star_4_4_name,'value':round(int(kw.star_4_4)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		sixingjsonkw5={'name':kw.star_4_5_name,'value':round(round(int(xingji.number_4num)/totalxing,2)-round(int(kw.star_4_1)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_2)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_3)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_4)*int(xingji.number_4num)/sixingkw/totalxing,2),2),'itemStyle':{'color': '#d45a59'}}
+		sixingjsonkw1={'name':kw.star_4_1_name,'value':round(int(kw.star_4_1)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#c78869'}}
+		sixingjsonkw2={'name':kw.star_4_2_name,'value':round(int(kw.star_4_2)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#d4ad12'}}
+		sixingjsonkw3={'name':kw.star_4_3_name,'value':round(int(kw.star_4_3)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#9d5433'}}
+		sixingjsonkw4={'name':kw.star_4_4_name,'value':round(int(kw.star_4_4)*int(xingji.number_4num)/sixingkw/totalxing,2),'itemStyle':{'color': '#c89f83'}}
+		sixingjsonkw5={'name':kw.star_4_5_name,'value':round(round(int(xingji.number_4num)/totalxing,2)-round(int(kw.star_4_1)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_2)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_3)*int(xingji.number_4num)/sixingkw/totalxing,2)-round(int(kw.star_4_4)*int(xingji.number_4num)/sixingkw/totalxing,2),2),'itemStyle':{'color': '#bb764c'}}
 	sixingjson['children'].append(sixingjsonkw1)
 	sixingjson['children'].append(sixingjsonkw2)
 	sixingjson['children'].append(sixingjsonkw3)
@@ -206,17 +206,17 @@ def view2(request):
 	#三星关键词
 	saxingkw=int(kw.star_3_1)+int(kw.star_3_2)+int(kw.star_3_3)+int(kw.star_3_4)+int(kw.star_3_5)
 	if(saxingkw==0):
-		saxingjsonkw1={'name':kw.star_3_1_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw2={'name':kw.star_3_2_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw3={'name':kw.star_3_3_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw4={'name':kw.star_3_4_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw5={'name':kw.star_3_5_name,'value':0,'itemStyle':{'color': '#d45a59'}}
+		saxingjsonkw1={'name':kw.star_3_1_name,'value':0,'itemStyle':{'color': '#794752'}}
+		saxingjsonkw2={'name':kw.star_3_2_name,'value':0,'itemStyle':{'color': '#cc3d41'}}
+		saxingjsonkw3={'name':kw.star_3_3_name,'value':0,'itemStyle':{'color': '#b14d57'}}
+		saxingjsonkw4={'name':kw.star_3_4_name,'value':0,'itemStyle':{'color': '#c78936'}}
+		saxingjsonkw5={'name':kw.star_3_5_name,'value':0,'itemStyle':{'color': '#8c292c'}}
 	else:
-		saxingjsonkw1={'name':kw.star_3_1_name,'value':round(int(kw.star_3_1)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw2={'name':kw.star_3_2_name,'value':round(int(kw.star_3_2)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw3={'name':kw.star_3_3_name,'value':round(int(kw.star_3_3)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw4={'name':kw.star_3_4_name,'value':round(int(kw.star_3_4)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		saxingjsonkw5={'name':kw.star_3_5_name,'value':round(round(int(xingji.number_3num)/totalxing,2)-round(int(kw.star_3_1)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_2)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_3)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_4)*int(xingji.number_3num)/saxingkw/totalxing,2),2),'itemStyle':{'color': '#d45a59'}}
+		saxingjsonkw1={'name':kw.star_3_1_name,'value':round(int(kw.star_3_1)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#794752'}}
+		saxingjsonkw2={'name':kw.star_3_2_name,'value':round(int(kw.star_3_2)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#cc3d41'}}
+		saxingjsonkw3={'name':kw.star_3_3_name,'value':round(int(kw.star_3_3)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#b14d57'}}
+		saxingjsonkw4={'name':kw.star_3_4_name,'value':round(int(kw.star_3_4)*int(xingji.number_3num)/saxingkw/totalxing,2),'itemStyle':{'color': '#c78936'}}
+		saxingjsonkw5={'name':kw.star_3_5_name,'value':round(round(int(xingji.number_3num)/totalxing,2)-round(int(kw.star_3_1)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_2)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_3)*int(xingji.number_3num)/saxingkw/totalxing,2)-round(int(kw.star_3_4)*int(xingji.number_3num)/saxingkw/totalxing,2),2),'itemStyle':{'color': '#8c292c'}}
 	saxingjson['children'].append(saxingjsonkw1)
 	saxingjson['children'].append(saxingjsonkw2)
 	saxingjson['children'].append(saxingjsonkw3)
@@ -225,17 +225,17 @@ def view2(request):
 	#二星关键词
 	erxingkw=int(kw.star_2_1)+int(kw.star_2_2)+int(kw.star_2_3)+int(kw.star_2_4)+int(kw.star_2_5)
 	if(erxingkw==0):
-		erxingjsonkw1={'name':kw.star_2_1_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw2={'name':kw.star_2_2_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw3={'name':kw.star_2_3_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw4={'name':kw.star_2_4_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw5={'name':kw.star_2_5_name,'value':0,'itemStyle':{'color': '#d45a59'}}
+		erxingjsonkw1={'name':kw.star_2_1_name,'value':0,'itemStyle':{'color': '#caa465'}}
+		erxingjsonkw2={'name':kw.star_2_2_name,'value':0,'itemStyle':{'color': '#dfbd7e'}}
+		erxingjsonkw3={'name':kw.star_2_3_name,'value':0,'itemStyle':{'color': '#be8663'}}
+		erxingjsonkw4={'name':kw.star_2_4_name,'value':0,'itemStyle':{'color': '#b9a449'}}
+		erxingjsonkw5={'name':kw.star_2_5_name,'value':0,'itemStyle':{'color': '#899893'}}
 	else:
-		erxingjsonkw1={'name':kw.star_2_1_name,'value':round(int(kw.star_2_1)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw2={'name':kw.star_2_2_name,'value':round(int(kw.star_2_2)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw3={'name':kw.star_2_3_name,'value':round(int(kw.star_2_3)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw4={'name':kw.star_2_4_name,'value':round(int(kw.star_2_4)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		erxingjsonkw5={'name':kw.star_2_5_name,'value':round(round(int(xingji.number_2num)/totalxing,2)-round(int(kw.star_2_1)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_2)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_3)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_4)*int(xingji.number_2num)/erxingkw/totalxing,2),2),'itemStyle':{'color': '#d45a59'}}
+		erxingjsonkw1={'name':kw.star_2_1_name,'value':round(int(kw.star_2_1)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#caa465'}}
+		erxingjsonkw2={'name':kw.star_2_2_name,'value':round(int(kw.star_2_2)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#dfbd7e'}}
+		erxingjsonkw3={'name':kw.star_2_3_name,'value':round(int(kw.star_2_3)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#be8663'}}
+		erxingjsonkw4={'name':kw.star_2_4_name,'value':round(int(kw.star_2_4)*int(xingji.number_2num)/erxingkw/totalxing,2),'itemStyle':{'color': '#b9a449'}}
+		erxingjsonkw5={'name':kw.star_2_5_name,'value':round(round(int(xingji.number_2num)/totalxing,2)-round(int(kw.star_2_1)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_2)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_3)*int(xingji.number_2num)/erxingkw/totalxing,2)-round(int(kw.star_2_4)*int(xingji.number_2num)/erxingkw/totalxing,2),2),'itemStyle':{'color': '#899893'}}
 	erxingjson['children'].append(erxingjsonkw1)
 	erxingjson['children'].append(erxingjsonkw2)
 	erxingjson['children'].append(erxingjsonkw3)
@@ -244,17 +244,17 @@ def view2(request):
 	#一星关键词
 	yixingkw=int(kw.star_1_1)+int(kw.star_1_2)+int(kw.star_1_3)+int(kw.star_1_4)+int(kw.star_1_5)
 	if(yixingkw==0):
-		yixingjsonkw1={'name':kw.star_1_1_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw2={'name':kw.star_1_2_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw3={'name':kw.star_1_3_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw4={'name':kw.star_1_4_name,'value':0,'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw5={'name':kw.star_1_5_name,'value':0,'itemStyle':{'color': '#d45a59'}}
+		yixingjsonkw1={'name':kw.star_1_1_name,'value':0,'itemStyle':{'color': '#f2684b'}}
+		yixingjsonkw2={'name':kw.star_1_2_name,'value':0,'itemStyle':{'color': '#e73451'}}
+		yixingjsonkw3={'name':kw.star_1_3_name,'value':0,'itemStyle':{'color': '#e65656'}}
+		yixingjsonkw4={'name':kw.star_1_4_name,'value':0,'itemStyle':{'color': '#f89a1c'}}
+		yixingjsonkw5={'name':kw.star_1_5_name,'value':0,'itemStyle':{'color': '#f68a5c'}}
 	else:
-		yixingjsonkw1={'name':kw.star_1_1_name,'value':round(int(kw.star_1_1)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw2={'name':kw.star_1_2_name,'value':round(int(kw.star_1_2)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw3={'name':kw.star_1_3_name,'value':round(int(kw.star_1_3)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw4={'name':kw.star_1_4_name,'value':round(int(kw.star_1_4)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#d45a59'}}
-		yixingjsonkw5={'name':kw.star_1_5_name,'value':round(1-round(int(xingji.number_5num)/totalxing,2)-round(int(xingji.number_4num)/totalxing,2)-round(int(xingji.number_3num)/totalxing,2)-round(int(xingji.number_2num)/totalxing,2)-round(int(kw.star_1_1)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_2)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_3)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_4)*int(xingji.number_1num)/yixingkw/totalxing,2),2),'itemStyle':{'color': '#d45a59'}}
+		yixingjsonkw1={'name':kw.star_1_1_name,'value':round(int(kw.star_1_1)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#f2684b'}}
+		yixingjsonkw2={'name':kw.star_1_2_name,'value':round(int(kw.star_1_2)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#e73451'}}
+		yixingjsonkw3={'name':kw.star_1_3_name,'value':round(int(kw.star_1_3)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#e65656'}}
+		yixingjsonkw4={'name':kw.star_1_4_name,'value':round(int(kw.star_1_4)*int(xingji.number_1num)/yixingkw/totalxing,2),'itemStyle':{'color': '#f89a1c'}}
+		yixingjsonkw5={'name':kw.star_1_5_name,'value':round(1-round(int(xingji.number_5num)/totalxing,2)-round(int(xingji.number_4num)/totalxing,2)-round(int(xingji.number_3num)/totalxing,2)-round(int(xingji.number_2num)/totalxing,2)-round(int(kw.star_1_1)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_2)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_3)*int(xingji.number_1num)/yixingkw/totalxing,2)-round(int(kw.star_1_4)*int(xingji.number_1num)/yixingkw/totalxing,2),2),'itemStyle':{'color': '#f68a5c'}}
 	yixingjson['children'].append(yixingjsonkw1)
 	yixingjson['children'].append(yixingjsonkw2)
 	yixingjson['children'].append(yixingjsonkw3)
